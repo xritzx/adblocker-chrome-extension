@@ -1,0 +1,20 @@
+{
+    "manifest_version": 2,
+  
+    "name": "Distraction-Destructer",
+    "description": "Blocks out distraction in a webpage like ads popups.",
+    "version": "1.0",
+    "permissions": ["webRequest", "webRequestBlocking", "<all_urls>"],
+    "icons": { 
+            "96": "icon.png" },
+    "background": {
+        "scripts": ["destructer.js"]
+    },
+    "content_scripts": [
+      {
+        "matches": ["http://*/*", "https://*/*"],
+        "js": ["jquery-3.4.0.min.js", "destructer.js"],
+        "run_at": "document_end"
+      }
+    ]
+  }
